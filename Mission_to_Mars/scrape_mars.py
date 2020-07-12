@@ -2,10 +2,9 @@
 import pandas as pd
 from bs4 import BeautifulSoup 
 import requests
-import pandas as pd
 from splinter import Browser
-import time
 import pymongo
+import time
 
 
 def init_browser():
@@ -82,7 +81,7 @@ def scrape():
     hemisphere_image_urls.append(cerberus) 
     browser.quit()
 
-     #### Schiaparelli 
+    #  #### Schiaparelli 
     executable_path = {'executable_path': 'chromedriver.exe'}
     browser = Browser('chrome', **executable_path, headless=True)
     mars_hemisphere_url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
@@ -100,7 +99,7 @@ def scrape():
     hemisphere_image_urls.append(schiaparelli) 
     browser.quit()
 
-     #### Syrtis 
+    #  #### Syrtis 
     executable_path = {'executable_path': 'chromedriver.exe'}
     browser = Browser('chrome', **executable_path, headless=True)
     mars_hemisphere_url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
@@ -118,7 +117,7 @@ def scrape():
     hemisphere_image_urls.append(syrtis) 
     browser.quit()
 
-    #### Valles Marineris 
+    # #### Valles Marineris 
     executable_path = {'executable_path': 'chromedriver.exe'}
     browser = Browser('chrome', **executable_path, headless=True)
     mars_hemisphere_url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
@@ -137,6 +136,7 @@ def scrape():
     browser.quit()
     mars_data["hemisphere_image_urls"] = hemisphere_image_urls
 
+    
     return mars_data
 
 

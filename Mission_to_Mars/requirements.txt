@@ -1,0 +1,9 @@
+Flask
+Jinja2
+pandas
+pymongo
+flask_pymongo
+time
+bs4
+requests
+splinter

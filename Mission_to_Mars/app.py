@@ -19,11 +19,10 @@ def index():
 
 @app.route("/scrape")
 def scraper():
-    mars_data = mongo.db.mars_data
-    mars_data1 = scrape_mars.scrape()
-    mars_data.update({}, mars_data1, upsert=True)
+    mars = mongo.db.mars_data
+    mars_data = scrape_mars.scrape_all()
+    mars.replace_one({}, mars_data, upsert=True)
     return redirect("/", code=302)
 
-
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
